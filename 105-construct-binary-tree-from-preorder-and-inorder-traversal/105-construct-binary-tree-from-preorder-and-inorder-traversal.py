@@ -9,9 +9,8 @@ class Solution:
         if inorder:
             rootValue = preorder.pop(0)
             rootIndex = inorder.index(rootValue)
-            root = TreeNode(inorder[rootIndex])
+            root = TreeNode(rootValue)
             root.left = self.buildTree(preorder, inorder[:rootIndex])
             root.right = self.buildTree(preorder, inorder[rootIndex+1:])
-			
             return root
         
